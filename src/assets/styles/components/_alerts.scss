@@ -1,0 +1,11 @@
+.alert {
+  border-radius: 10px;
+
+  &.alert-primary {
+    color: $primary;
+    background-color: #edf4fd;
+    border-color: #edf4fd;
+    font-size: 0.875rem;
+    margin-top: 30px;
+  }
+}

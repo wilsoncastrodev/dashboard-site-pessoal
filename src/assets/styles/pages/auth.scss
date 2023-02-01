@@ -1,0 +1,62 @@
+.auth-page {
+    &-bg {
+        width: calc(100% - 420px);
+        display: block;
+        margin-left: auto;
+        position: relative;
+
+        img {
+            height: 100vh;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .bible-message {
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 18px;
+            width: 400px;
+            color: #dbdbdb;
+            margin: 34px 50px;
+
+            i {
+                padding-right: 10px;
+                position: relative;
+                bottom: 5px;
+                font-size: 26px;
+            }
+        }
+    }
+
+    &-content {
+        padding: 0 24px;
+        width: 420px;
+        float: left;
+
+        .subtitle {
+            font-size: 0.8125rem;
+        }
+
+        @include media-breakpoint-down(md) {
+            width: 100%;
+            padding: 0 5px;
+        }
+
+        .auth-login {
+            padding-top: 50px;
+
+            @include media-breakpoint-down(md) {
+                padding-top: 10px;
+            }
+        }
+
+        .auth-register {
+            padding-top: 60px;
+
+            @include media-breakpoint-down(md) {
+                padding-top: 10px;
+            }
+        }
+    }
+}

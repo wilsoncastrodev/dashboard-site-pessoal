@@ -1,59 +1,66 @@
-import { createBrowserRouter, Navigate } from 'react-router-dom';
+import { createBrowserRouter, Navigate } from "react-router-dom";
 
-import AuthLayout from '../layouts/AuthLayout';
-import DashboardLayout from '../layouts/DashboardLayout';
+import AuthLayout from "../layouts/AuthLayout";
+import DashboardLayout from "../layouts/DashboardLayout";
 
-import ErrorPage from '../pages/errors/Error';
-import NotFoundPage from '../pages/errors/NotFound';
+import ProtectedRoute from "../components/auth/ProtectedRoute";
+import LoginProtectedRoute from "../components/auth/LoginProtectedRoute";
 
-import LoginPage from '../pages/auth/Login';
-import RegisterPage from '../pages/auth/Register';
+import ErrorPage from "../pages/errors/Error";
+import NotFoundPage from "../pages/errors/NotFound";
 
-import HomePage from '../pages/dashboard/Home';
+import LoginPage from "../pages/auth/Login";
+import RegisterPage from "../pages/auth/Register";
+
+import HomePage from "../pages/dashboard/Home";
 
 const Router = createBrowserRouter([
     {
-        path: '/',
-        element: <AuthLayout />,
+        path: "/",
+        element: (
+            <LoginProtectedRoute>
+                <AuthLayout />
+            </LoginProtectedRoute>
+        ),
         errorElement: <ErrorPage />,
         children: [
             {
-                path: '',
-                element: <Navigate to="login" />
+                path: "",
+                element: <Navigate to="login" />,
             },
             {
-                path: 'login',
-                element: <LoginPage />
+                path: "login",
+                element: <LoginPage />,
             },
             {
-                path: 'registrar',
-                element: <RegisterPage />
+                path: "registrar",
+                element: <RegisterPage />,
+            },
+        ],
+    },
+    {
+        path: "dashboard",
+        element: (
+            <ProtectedRoute>
+                <DashboardLayout />
+            </ProtectedRoute>
+        ),
+        errorElement: <ErrorPage />,
+        children: [
+            {
+                path: "*",
+                element: <NotFoundPage />,
+            },
+            {
+                path: "",
+                element: <HomePage />,
             }
-        ]
+        ],
     },
     {
-        path: 'dashboard',
-        element: <DashboardLayout />,
-        errorElement: <ErrorPage />,
-        children: [
-            {
-                path: '*',
-                element: <NotFoundPage />
-            },
-            {
-                path: '',
-                element: <Navigate to="home" />
-            },
-            {
-                path: 'home',
-                element: <HomePage />
-            },
-        ]
+        path: "*",
+        element: <NotFoundPage />,
     },
-    {
-        path: '*',
-        element: <NotFoundPage />
-    }
-])
+]);
 
-export default Router
+export default Router;

@@ -1,0 +1,35 @@
+form {
+    input::placeholder {
+        font-size: 0.87rem;
+        color: #9495ab !important;
+        opacity: 0.8 !important;
+    }
+
+    .is-valid {
+        border-color: #198754 !important;
+    }
+
+    .is-invalid {
+        border-color: #dc3545 !important;
+    }
+
+    &.form-auth {
+        label {
+            letter-spacing: 0.2px;
+            color: $primary;
+        }
+
+        .form-control {
+            height: 48px;
+            border-radius: 0.4rem;
+            font-size: 0.9rem;
+            color: $primary;
+
+            &:focus {
+                border-color: $primary;
+            }
+        }
+    }
+}
+
+
