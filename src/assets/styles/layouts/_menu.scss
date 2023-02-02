@@ -1,0 +1,126 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    padding-top: 91px;
+    z-index: 100;
+    height: calc(100% - 91px);
+
+    &-menu {
+        width: 150px;
+        height: calc(100% - 91px);
+        background: $white;
+        z-index: 10;
+        position: fixed;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        left: 0;
+        border-left: 4px solid $blue-600;
+        border-radius: 0 18px 18px 0;
+        box-shadow: 0 3px 30px rgb(0 0 0 / 10%), 0 3px 20px rgb(0 0 0 / 10%);
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        .list-group {
+            .list-group-item {
+                border-top: none;
+                border-right: none;
+                border-radius: 0;
+                padding: 13px 12px;
+                border-bottom-color: $gray-600;
+
+                &:last-child {
+                    border-bottom: none;
+                    border-radius: 0 0 18px 0;
+                }
+
+                .menu-item {
+                    line-height: 1.9;
+                    color: $blue-600;
+                    padding: 26px 1px 13px;
+                    display: block;
+                    text-align: center;
+
+                    &.active {
+                        color: $blue-600;
+                        background-color: $gray-700;
+                        border-radius: 10px;
+                    }
+
+                    &:hover {
+                        background-color: $gray-700;
+                        border-radius: 10px;
+                    }
+
+                    .menu-name {
+                        line-height: 1.5;
+                    }
+
+                    i {
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.footerbar {
+    position: fixed;
+    bottom: 0;
+    padding-top: 91px;
+    z-index: 100;
+    width: 100%;
+
+    &-menu {
+        width: 100%;
+        background: $white;
+        z-index: 10;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        padding: 4px 6px;
+        border-radius: 14px 14px 0 0;
+        box-shadow: 0 3px 30px rgb(0 0 0 / 10%), 0 3px 20px rgb(0 0 0 / 10%);
+
+        .menu {
+            border: none;
+            border-radius: 0;
+            width: 114px;
+
+            .menu-item {
+                line-height: 1.9;
+                color: $blue-600;
+                display: block;
+                text-align: center;
+                font-size: 0.7rem;
+                width: 96px;
+                height: 67px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding-top: 6px;
+
+                &.active {
+                    color: $blue-600;
+                    background-color: $gray-700;
+                    border-radius: 10px;
+                }
+
+                &:hover {
+                    background-color: none;
+                }
+
+                .menu-name {
+                    line-height: 1.5;
+                }
+
+                .menu-icon {
+                    i {
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+        }
+    }
+}

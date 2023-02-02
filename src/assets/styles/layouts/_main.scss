@@ -1,0 +1,8 @@
+main {
+    margin-left: 174px;
+
+    @include media-breakpoint-down(md) {
+        margin-left: 0;
+        padding-top: 72px;
+    }
+}

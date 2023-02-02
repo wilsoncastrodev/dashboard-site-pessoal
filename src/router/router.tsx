@@ -13,6 +13,7 @@ import LoginPage from "../pages/auth/Login";
 import RegisterPage from "../pages/auth/Register";
 
 import HomePage from "../pages/dashboard/Home";
+import ProfilePage from "../pages/dashboard/Profile";
 
 const Router = createBrowserRouter([
     {
@@ -54,7 +55,11 @@ const Router = createBrowserRouter([
             {
                 path: "",
                 element: <HomePage />,
-            }
+            },
+            {
+                path: "perfil",
+                element: <ProfilePage />,
+            },
         ],
     },
     {

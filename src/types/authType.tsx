@@ -18,7 +18,7 @@ export type AuthResponseType = {
 };
 
 export type AuthStateType = {
-    user: UserType | null,
+    user: UserType | any,
     errors: any,
     isLoading: boolean,
 };

@@ -1,16 +1,16 @@
 form {
     input::placeholder {
         font-size: 0.87rem;
-        color: #9495ab !important;
+        color: $gray !important;
         opacity: 0.8 !important;
     }
 
     .is-valid {
-        border-color: #198754 !important;
+        border-color: $green !important;
     }
 
     .is-invalid {
-        border-color: #dc3545 !important;
+        border-color: $red !important;
     }
 
     &.form-auth {
