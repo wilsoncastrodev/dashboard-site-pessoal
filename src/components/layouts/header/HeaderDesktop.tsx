@@ -1,12 +1,15 @@
 import { FC } from "react";
 import { Col, Container, Dropdown, Row } from "react-bootstrap";
 import { useNavigate, Link } from "react-router-dom";
-import { useAppDispatch } from "../../../stores/store";
+import { useAppDispatch, useAppSelector, RootState } from "../../../stores/store";
+
 import { logout } from "../../../stores/features/authSlice";
+import { nameShort, firstLetterName } from "../../../utils/commons";
 
 const HeaderDesktop: FC = () => {
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
+    const auth = useAppSelector((state: RootState) => state.auth);
 
     const handleLogout = () => {
         dispatch(logout());
@@ -30,11 +33,11 @@ const HeaderDesktop: FC = () => {
                             <Dropdown className="d-inline mx-2">
                                 <Dropdown.Toggle id="dropdown-autoclose-true">
                                     <span>
-                                        Wilson Castro{" "}
+                                        {nameShort(auth.user.profile.name)}{" "}
                                         <i className="fa-solid fa-angle-down"></i>
                                     </span>
                                     <div className="navbox text-white text-decoration-none ms-1 me-2">
-                                        <span>W</span>
+                                        <span>{firstLetterName(auth.user.profile.name)}</span>
                                     </div>
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>

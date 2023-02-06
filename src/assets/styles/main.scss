@@ -1,5 +1,9 @@
 @import "~bootstrap/scss/bootstrap";
 @import '~@fortawesome/fontawesome-free/css/all.min.css';
+@import "primereact/resources/themes/lara-light-indigo/theme.css";
+@import "primereact/resources/primereact.min.css";
+@import "primeicons/primeicons.css";
+@import "@material/snackbar/mdc-snackbar";
 
 // FONTS
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
@@ -11,8 +15,11 @@
 // COMPONENTS
 @import 'components/alerts';
 @import 'components/buttons';
+@import 'components/cards';
+@import 'components/datatables';
 @import 'components/dropdowns';
 @import 'components/forms';
+@import 'components/snackbars';
 @import 'components/typography';
 
 // LAYOUTS

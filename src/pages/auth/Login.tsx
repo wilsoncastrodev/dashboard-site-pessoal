@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Container } from "react-bootstrap";
-import FormLogin from "../../components/forms/FormLogin";
+import FormLogin from "../../components/auth/FormLogin";
 import Logo from "../../components/logos/Logo";
 
 const LoginPage: FC = () => (

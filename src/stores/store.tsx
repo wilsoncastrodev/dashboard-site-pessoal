@@ -1,10 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import authReducer from "./features/authSlice";
+import educationReducer from "./features/educationSlice";
 import { useDispatch, useSelector, TypedUseSelectorHook } from "react-redux";
 
 const store = configureStore({
     reducer: {
         auth: authReducer,
+        education: educationReducer
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
 })

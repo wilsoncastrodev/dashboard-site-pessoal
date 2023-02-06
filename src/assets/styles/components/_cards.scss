@@ -1,0 +1,22 @@
+.card {
+    box-shadow: 0 0px 10px rgb(0 0 0 / 10%), 0 1px 6px rgb(0 0 0 / 10%);
+    border: none;
+    border-radius: 12px;
+    color: $blue-100;
+
+    @include media-breakpoint-down(sm) {
+        margin-top: 20px;
+    }
+
+    &-body {
+        padding: 24px 28px;
+
+        @include media-breakpoint-down(lg) {
+            padding: 16px;
+        }
+    }
+
+    &-title {
+        margin-bottom: 20px;
+    }
+}

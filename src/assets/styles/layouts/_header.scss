@@ -3,6 +3,9 @@ header {
     box-shadow: 1px 2px 8px 0 rgba(29, 70, 102, 1);
     position: relative;
     z-index: 1000;
+    position: fixed;
+    top: 0;
+    width: 100%;
 
     @include media-breakpoint-down(md) {
         position: fixed;

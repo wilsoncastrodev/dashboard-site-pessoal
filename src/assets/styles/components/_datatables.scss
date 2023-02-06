@@ -1,0 +1,175 @@
+.p-datatable {
+    .p-datatable-wrapper {
+        overflow-x: inherit;
+
+        table {
+            border-collapse: separate !important;
+            padding: 5px;
+            border-spacing: 0 1rem;
+            margin-top: -1rem;
+            margin-bottom: -1rem;
+            color: $blue-200;
+            width: 100%;
+
+            thead {
+                position: relative;
+                top: 4px;
+
+                tr {
+                    box-shadow: none;
+                    border-radius: 0;
+
+                    th {
+                        border: none;
+                        padding-left: 14px;
+                        padding-bottom: 0 !important;
+
+                        .p-column-header-content {
+                            padding-bottom: 7px;
+                            padding-top: 7px;
+
+                            .p-column-title {
+                                color: $blue-100 !important;
+                                font-size: 0.9375rem;
+                            }
+
+                            .p-sortable-column-icon {
+                                font-size: 0.85rem;
+                                color: $blue-100 !important;
+                            }
+                        }
+                    }
+                }
+            }
+
+            tbody {
+                tr {
+                    box-shadow: 0 0px 10px rgb(0 0 0 / 10%), 0 1px 6px rgb(0 0 0 / 10%);
+                    border-radius: 10px;
+                    height: 78px;
+                    background: none !important;
+                    color: $blue-100 !important;
+
+                    img {
+                        border-radius: 5px;
+                        width: 150px;
+                        height: 120px;
+                        object-fit: cover;
+                        object-position: center;
+                    }
+
+                    td {
+                        .p-column-title {
+                            min-width: 114px;
+                        }
+                    }
+                }
+            }
+
+            th {
+                padding: 0;
+                color: $blue-600;
+            }
+
+            td {
+                padding: 1rem;
+                max-width: 268px;
+                min-width: 15px;
+                font-size: 0.875rem;
+                background-color: $white;
+
+                &:first-child {
+                    border-radius: 10px 0 0 10px;
+
+                    @include media-breakpoint-down(lg) {
+                        border-radius: 10px;
+                    }
+                }
+
+                &:last-child {
+                    border-radius: 0 10px 10px 0;
+
+                    @include media-breakpoint-down(lg) {
+                        border-radius: 10px;
+                        padding: 6px 1rem 12px;
+                    }
+                }
+
+                @include media-breakpoint-down(lg) {
+                    padding-bottom: 3px;
+                    max-width: none;
+                }
+
+                > button {
+                    font-size: 1.3rem;
+                    color: #4682b4 !important;
+                    border: none;
+                    background: none;
+
+                    &:hover {
+                        color: #4682b4 !important;
+                        background: none !important;
+                    }
+                }
+
+                a {
+                    color: $blue-600;
+
+                    i {
+                        font-size: 20px;
+                    }
+
+                    &:hover,
+                    &:active,
+                    &:focus {
+                        color: $blue-600;
+                    }
+                }
+            }
+
+            tr {
+                text-align: center;
+            }
+
+            .p-datatable-row-expansion {
+                td {
+                    border-radius: 10px;
+                    padding: 0;
+                }
+            }
+
+            @include media-breakpoint-down(md) {
+                padding: 0;
+            }
+        }
+    }
+
+    .p-sortable-column {
+        border-radius: 7px;
+
+        &.p-sortable-column.p-highlight {
+            background: rgb(28 101 137 / 8%);
+
+            &:hover {
+                background: rgb(28 101 137 / 8%) !important;
+            }
+        }
+    }
+
+
+    .p-paginator-bottom {
+        box-shadow: 0 0px 10px rgb(0 0 0 / 10%), 0 1px 6px rgb(0 0 0 / 10%);
+        border-radius: 10px;
+        margin: 13px 4px;
+
+        .p-highlight {
+            background: #e4f2f6 !important;
+            border-color: #e4f2f6 !important;
+            color: $blue-100 !important;
+        }
+
+        @include media-breakpoint-down(md) {
+            margin: 18px 0;
+        }
+    }
+}

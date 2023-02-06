@@ -10,6 +10,19 @@
     &:hover {
       background: darken($primary, 2%);
     }
+
+    &-alt {
+        background: $blue-700;
+        border: none;
+        font-family: 'Rubik';
+        border-radius: 6px;
+        padding: 12px 14px;
+        font-size: 15px;
+
+        &:hover {
+          background: darken($blue-700, 2%);
+        }
+    }
   }
 
   &.btn-block {

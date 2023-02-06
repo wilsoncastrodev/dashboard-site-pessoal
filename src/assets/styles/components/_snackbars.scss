@@ -1,0 +1,16 @@
+.mdc-snackbar {
+    &__surface {
+        background-image: linear-gradient(to right, #19799c, #1a7397, #1b6e92, #1b688c, #1c6387);
+        border-radius: 6px;
+
+        .mdc-button {
+            color: $white;
+            background: transparent;
+            border: none;
+        }
+    }
+
+    @include media-breakpoint-down(sm) {
+        margin-bottom: 100px;
+    }
+}

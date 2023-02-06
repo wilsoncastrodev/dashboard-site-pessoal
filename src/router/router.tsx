@@ -12,8 +12,8 @@ import NotFoundPage from "../pages/errors/NotFound";
 import LoginPage from "../pages/auth/Login";
 import RegisterPage from "../pages/auth/Register";
 
-import HomePage from "../pages/dashboard/Home";
 import ProfilePage from "../pages/dashboard/Profile";
+import EducationPage from "../pages/dashboard/Education";
 
 const Router = createBrowserRouter([
     {
@@ -54,11 +54,15 @@ const Router = createBrowserRouter([
             },
             {
                 path: "",
-                element: <HomePage />,
+                element: <Navigate to="educacao" />
             },
             {
                 path: "perfil",
                 element: <ProfilePage />,
+            },
+            {
+                path: "educacao",
+                element: <EducationPage />,
             },
         ],
     },

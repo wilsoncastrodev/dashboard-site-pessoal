@@ -8,11 +8,11 @@
         font-family: $font-family-main;
 
         a {
-            color: $blue-600 !important;
+            color: $black !important;
 
             &:active {
-                background-color: $blue-600 !important;
-                color: $white !important;
+                background-color: #EEF2FF !important;
+                color: $black !important;
             }
         }
 
@@ -78,5 +78,11 @@
                 }
             }
         }
+    }
+}
+
+.p-dropdown-panel {
+    .p-dropdown-item {
+        font-size: 0.9rem;
     }
 }

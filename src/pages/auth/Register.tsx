@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Container } from "react-bootstrap";
-import FormRegister from "../../components/forms/FormRegister";
+import FormRegister from "../../components/auth/FormRegister";
 import Logo from "../../components/logos/Logo";
 
 const RegisterPage: FC = () => (

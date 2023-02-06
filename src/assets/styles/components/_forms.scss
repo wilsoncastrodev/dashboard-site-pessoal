@@ -1,4 +1,8 @@
 form {
+    .form-control {
+        border-color: $primary;
+    }
+
     input::placeholder {
         font-size: 0.87rem;
         color: $gray !important;
@@ -7,10 +11,99 @@ form {
 
     .is-valid {
         border-color: $green !important;
+
+        > input {
+            border-color: $green !important;
+            padding-right: calc(1.5em + 0.75rem);
+            background-image: url("data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 8 8%27%3e%3cpath fill=%27%23198754%27 d=%27M2.3 6.73.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z%27/%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right calc(0.375em + 0.1875rem) center;
+            background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+        }
     }
 
     .is-invalid {
         border-color: $red !important;
+
+        > input {
+            border-color: $red !important;
+            padding-right: calc(1.5em + 0.75rem);
+            background-image: url('data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 12 12%27 width=%2712%27 height=%2712%27 fill=%27none%27 stroke=%27%23dc3545%27%3e%3ccircle cx=%276%27 cy=%276%27 r=%274.5%27/%3e%3cpath stroke-linejoin=%27round%27 d=%27M5.8 3.6h.4L6 6.5z%27/%3e%3ccircle cx=%276%27 cy=%278.2%27 r=%27.6%27 fill=%27%23dc3545%27 stroke=%27none%27/%3e%3c/svg%3e');
+            background-repeat: no-repeat;
+            background-position: right calc(0.375em + 0.1875rem) center;
+            background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+        }
+    }
+
+    &.form {
+        font-family: $font-family-main;
+        font-size: 0.875rem;
+
+        label {
+            letter-spacing: 0.2px;
+        }
+
+        input::placeholder {
+            font-size: 0.9rem;
+            font-weight: 300;
+            color: $gray !important;
+        }
+
+        .form-control,
+        .p-inputtext,
+        select {
+            height: 48px;
+            border-radius: 0.4rem;
+            font-size: 0.9rem;
+            border-color: $primary;
+
+            &:focus,
+            &:hover {
+                border-color: $primary;
+            }
+        }
+
+        .form-check-input {
+            &:checked {
+                background-color: $primary;
+                border-color: $primary;
+            }
+        }
+
+        textarea {
+            min-height: 120px;
+        }
+
+        .p-dropdown {
+            border-color: $primary;
+            width: 100%;
+            box-shadow: none !important;
+
+            &-label {
+                font-family: $font-family-main;
+                padding-top: 14px;
+            }
+
+            &:focus,
+            &:hover,
+            &:active {
+                border-color: $primary;
+                outline: none;
+            }
+        }
+
+        .p-disabled,
+        .p-component:disabled {
+            opacity: 0.6;
+            border-color: #e2e5e9;
+        }
+
+        .invalid {
+            width: 100%;
+            margin-top: 0.25rem;
+            font-size: 0.875em;
+            color: #dc3545;
+        }
     }
 
     &.form-auth {
@@ -31,5 +124,6 @@ form {
         }
     }
 }
+
 
 
