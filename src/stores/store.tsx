@@ -1,12 +1,15 @@
 import { configureStore } from "@reduxjs/toolkit";
 import authReducer from "./features/authSlice";
 import educationReducer from "./features/educationSlice";
+import experienceReducer from "./features/experienceSlice";
 import { useDispatch, useSelector, TypedUseSelectorHook } from "react-redux";
 
 const store = configureStore({
     reducer: {
         auth: authReducer,
         education: educationReducer
+        education: educationReducer,
+        experience: experienceReducer
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
 })
