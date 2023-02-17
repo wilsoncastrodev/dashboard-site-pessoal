@@ -7,3 +7,9 @@ export const setUserCurrent = (user: any): void => localStorage.setItem('userCur
 export const firstLetterName = (name: string) => name.charAt(0);
 
 export const nameShort = (name: string) => name.split(" ")[0] + " " + name.split(" ")[1];
+
+export const convertUrlToFile = async (url: string, filename: string) => {
+    const response = await fetch(url);
+    const data = await response.blob();
+    return new File([data], filename!, { type: `image/jpeg` });
+}

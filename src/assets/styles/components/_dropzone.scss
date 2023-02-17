@@ -1,0 +1,24 @@
+.dropzone {
+    align-items: center;
+    padding: 20px;
+    border-width: 2;
+    border-color: #5f90b8;
+    background-color: #fafafa;
+    border-style: dashed;
+    transition: border .24s ease-in-out;
+    border-radius: 6px;
+    text-align: center;
+    border-width: 2px;
+    color: #8cb0c3;
+
+    .dropzone-file {
+        display: none;
+    }
+
+    img {
+        width: 100% !important;
+        height: auto !important;
+        margin-top: 10px;
+        border-radius: 8px;
+    }
+}

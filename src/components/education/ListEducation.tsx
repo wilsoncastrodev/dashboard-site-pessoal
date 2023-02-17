@@ -6,6 +6,7 @@ import { Column } from "primereact/column";
 import { MDCSnackbar } from '@material/snackbar';
 import EditFormEducation from "./EditFormEducation";
 import MediaQuery from 'react-responsive'
+import { Card } from "react-bootstrap";
 
 const ListEducation: FC = () => {
     const user = useAppSelector((state: RootState) => state.auth.user);
@@ -90,7 +91,9 @@ const ListEducation: FC = () => {
                         </DataTable>
                     </MediaQuery>
                 </Fragment>
-                 : ''
+                 :  <Card className="mt-5">
+                        <Card.Body>Não há nenhuma Educação cadastrada.</Card.Body>
+                    </Card>
             }
         </Fragment>
     )

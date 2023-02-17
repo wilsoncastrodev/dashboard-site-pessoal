@@ -64,7 +64,6 @@ export const educationSlice = createSlice({
         });
         builder.addCase(getAllProfileEducation.rejected, (state, action) => {
             state.errors = action.payload;
-            state.isLoading = false;
         });
         builder.addCase(createEducation.pending, (state) => {
             state.isLoading = true;

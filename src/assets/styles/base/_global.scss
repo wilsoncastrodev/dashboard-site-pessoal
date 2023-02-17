@@ -43,3 +43,7 @@ a {
 .p-component {
     font-family: $font-family-main;
 }
+
+.p-image-mask {
+    z-index: 10000000000 !important;
+}

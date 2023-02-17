@@ -64,7 +64,6 @@ export const experienceSlice = createSlice({
         });
         builder.addCase(getAllProfileExperience.rejected, (state, action) => {
             state.errors = action.payload;
-            state.isLoading = false;
         });
         builder.addCase(createExperience.pending, (state) => {
             state.isLoading = true;

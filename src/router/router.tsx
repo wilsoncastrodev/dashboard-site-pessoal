@@ -15,6 +15,7 @@ import RegisterPage from "../pages/auth/Register";
 import ProfilePage from "../pages/dashboard/Profile";
 import EducationPage from "../pages/dashboard/Education";
 import ExperiencePage from "../pages/dashboard/Experience";
+import InterestPage from "../pages/dashboard/Interest";
 
 const Router = createBrowserRouter([
     {
@@ -68,6 +69,10 @@ const Router = createBrowserRouter([
             {
                 path: "experiencias",
                 element: <ExperiencePage />,
+            },
+            {
+                path: "interesses",
+                element: <InterestPage />,
             },
         ],
     },
