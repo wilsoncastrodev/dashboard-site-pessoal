@@ -86,6 +86,9 @@ const EditFormInterest = (interest: any) => {
                                 >
                                     <Form.Label>Imagem</Form.Label>
                                     <ImageDropzone name="image" />
+                                    <div className="invalid">
+                                        <ErrorMessage name="image" />
+                                    </div>
                                 </Form.Group>
                             </Row>
                         </Col>

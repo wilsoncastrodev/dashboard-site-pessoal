@@ -43,6 +43,7 @@
         @include media-breakpoint-down(md) {
             width: 100%;
             padding: 0 5px;
+            background: $white !important;
         }
 
         .auth-login {
@@ -50,6 +51,7 @@
 
             @include media-breakpoint-down(md) {
                 padding-top: 10px;
+                height: 100vh;
             }
         }
 

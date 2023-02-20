@@ -18,8 +18,6 @@ const ImageDropzone = ({ name }: any) => {
         'image/jpeg': ['.jpeg', '.png', '.svg'],
     }, onDrop });
 
-    console.log(errors);
-
     return (
         <div>
             <div {...getRootProps({className: 'dropzone'})}>
@@ -27,9 +25,6 @@ const ImageDropzone = ({ name }: any) => {
                 Clique ou arraste uma imagem para esta área para fazer o envio
                 {files.length > 0 && (values.image && true) && !errors.image ? <img src={files[0].preview} alt="" /> : null}
                 {!(files.length > 0) && (values.image && true) ? <img src={values.image.url} alt="" /> : null}
-            </div>
-            <div className="invalid">
-                {(files.length > 0) && errors.image ? errors.image : ''}
             </div>
         </div>
     );

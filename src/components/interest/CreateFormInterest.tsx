@@ -75,6 +75,9 @@ const CreateFormInterest: FC = () => {
                         >
                             <Form.Label>Imagem</Form.Label>
                             <ImageDropzone name="image" />
+                            <div className="invalid">
+                                <ErrorMessage name="image" />
+                            </div>
                         </Form.Group>
                     </Row>
                     <div className="text-end">

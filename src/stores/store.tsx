@@ -3,6 +3,7 @@ import authReducer from "./features/authSlice";
 import educationReducer from "./features/educationSlice";
 import experienceReducer from "./features/experienceSlice";
 import interestReducer from "./features/interestSlice";
+import sourceKnowledgeReducer from "./features/sourceKnowledgeSlice";
 import { useDispatch, useSelector, TypedUseSelectorHook } from "react-redux";
 
 const store = configureStore({
@@ -11,7 +12,8 @@ const store = configureStore({
         education: educationReducer
         education: educationReducer,
         experience: experienceReducer,
-        interest: interestReducer
+        interest: interestReducer,
+        sourceKnowledge: sourceKnowledgeReducer
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
 })
