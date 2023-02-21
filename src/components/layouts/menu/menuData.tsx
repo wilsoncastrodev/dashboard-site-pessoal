@@ -41,6 +41,12 @@ const menuData = [
         icon: "fa-solid fa-book",
         route: "habilidades",
     },
+    {
+        id: "7",
+        name: "Conhecimentos Complementares",
+        icon: "fa-solid fa-book-medical",
+        route: "conhecimentos-complementares",
+    },
 ]
 
 export default menuData;

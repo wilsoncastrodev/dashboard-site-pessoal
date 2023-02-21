@@ -6,6 +6,8 @@ import interestReducer from "./features/interestSlice";
 import sourceKnowledgeReducer from "./features/sourceKnowledgeSlice";
 import skillReducer from "./features/skillSlice";
 import categorySkillReducer from "./features/categorySkillSlice";
+import knowledgeReducer from "./features/knowledgeSlice";
+import categoryKnowledgeReducer from "./features/categoryKnowledgeSlice";
 import { useDispatch, useSelector, TypedUseSelectorHook } from "react-redux";
 
 const store = configureStore({
@@ -17,7 +19,9 @@ const store = configureStore({
         interest: interestReducer,
         sourceKnowledge: sourceKnowledgeReducer,
         skill: skillReducer,
-        categorySkill: categorySkillReducer
+        categorySkill: categorySkillReducer,
+        knowledge: knowledgeReducer,
+        categoryKnowledge: categoryKnowledgeReducer
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
 })
