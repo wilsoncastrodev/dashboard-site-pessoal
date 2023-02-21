@@ -17,6 +17,7 @@ import EducationPage from "../pages/dashboard/Education";
 import ExperiencePage from "../pages/dashboard/Experience";
 import InterestPage from "../pages/dashboard/Interest";
 import SourceKnowledgePage from "../pages/dashboard/SourceKnowledge";
+import SkillPage from "../pages/dashboard/Skill";
 
 const Router = createBrowserRouter([
     {
@@ -78,6 +79,10 @@ const Router = createBrowserRouter([
             {
                 path: "fontes-conhecimento",
                 element: <SourceKnowledgePage />,
+            },
+            {
+                path: "habilidades",
+                element: <SkillPage />,
             },
         ],
     },

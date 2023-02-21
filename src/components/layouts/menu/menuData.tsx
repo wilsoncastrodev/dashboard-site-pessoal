@@ -39,7 +39,7 @@ const menuData = [
         id: "7",
         name: "Habilidades",
         icon: "fa-solid fa-book",
-        route: "teste1"
+        route: "habilidades",
     },
 ]
 

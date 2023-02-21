@@ -1,6 +1,6 @@
 import { FC, Fragment } from "react";
-import ListSourceKnowledge from "../../components/sourceKnowledge/ListSourceKnowledge";
-import AddSourceKnowledge from "../../components/sourceKnowledge/AddSourceKnowledge";
+import ListSourceKnowledge from "../../components/source-knowledge/ListSourceKnowledge";
+import AddSourceKnowledge from "../../components/source-knowledge/AddSourceKnowledge";
 import { Col, Row } from "react-bootstrap";
 
 const SourceKnowledgePage: FC = () => {

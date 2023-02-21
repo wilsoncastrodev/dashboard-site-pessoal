@@ -171,5 +171,17 @@
         @include media-breakpoint-down(md) {
             margin: 18px 0;
         }
+
+        @include media-breakpoint-down(sm) {
+            padding-right: 4px;
+            padding-left: 4px;
+
+            .p-paginator-element {
+                min-width: 1.9rem;
+                height: 1.9rem;
+                margin: .1rem;
+                font-size: .9rem;
+            }
+        }
     }
 }

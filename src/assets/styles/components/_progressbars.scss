@@ -1,0 +1,12 @@
+.p-progressbar {
+    height: 20px;
+
+    @include media-breakpoint-down(lg) {
+        width: 280px;
+    }
+
+    .p-progressbar-value {
+        background: #1b6e91;
+        font-size: 10px;
+    }
+}

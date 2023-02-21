@@ -124,3 +124,52 @@
         }
     }
 }
+
+.menu-page {
+    .card-body {
+        padding: 0;
+        height: 70px;
+
+        .list-group {
+            height: 100%;
+            line-height: 2.8;
+
+            .list-group-item {
+                flex: 1 1 0;
+                width: 0;
+                color: #138fb1;
+                padding: 10px;
+                border-color: $gray-600;
+
+
+                &:first-child {
+                    border-bottom-left-radius: 12px;
+                    border-top-left-radius: 12px;
+                }
+
+                &:last-child {
+                    border-bottom-right-radius: 12px;
+                    border-top-right-radius: 12px;
+                }
+
+                .menu-item {
+                    color: $blue-100;
+                    display: block;
+                    text-align: center;
+                    padding: 4px 0;;
+
+                    &.active {
+                        color: $blue-100;
+                        background-color: $gray-700;
+                        border-radius: 8px;
+                    }
+
+                    &:hover {
+                        background-color: $gray-700;
+                        border-radius: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
