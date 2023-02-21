@@ -18,6 +18,7 @@ import ExperiencePage from "../pages/dashboard/Experience";
 import InterestPage from "../pages/dashboard/Interest";
 import SourceKnowledgePage from "../pages/dashboard/SourceKnowledge";
 import SkillPage from "../pages/dashboard/Skill";
+import CategorySkillPage from "../pages/dashboard/CategorySkill";
 
 const Router = createBrowserRouter([
     {
@@ -83,6 +84,10 @@ const Router = createBrowserRouter([
             {
                 path: "habilidades",
                 element: <SkillPage />,
+            },
+            {
+                path: "categorias/habilidades",
+                element: <CategorySkillPage />,
             },
         ],
     },

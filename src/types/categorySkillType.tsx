@@ -5,6 +5,14 @@ export type CategorySkillResponseType = {
     updated_at: string
 };
 
+export type CategorySkillRequestType = {
+    _id?: string,
+    name: string,
+    profile: {
+        _id: string
+    }
+}
+
 export type CategorySkillStateType = {
     categorySkill: CategorySkillResponseType | any,
     errors: any,
