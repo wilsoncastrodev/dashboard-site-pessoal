@@ -18,11 +18,13 @@ const EditFormSkill = (skill: any) => {
     useEffect(() => {
         setCategory([]);
         if (categorySkill && categorySkill.length > 0) {
-            categorySkill.map((category: any) => {
+            const _categorySkill = [...categorySkill]
+            _categorySkill.sort((a: any, b: any) => a.name > b.name ? 1 : -1)
+
+            _categorySkill.map((category: any) => {
                 setCategory((prevCategory: any) => [...prevCategory, { name: category.name, value: category._id }]);
             })
         }
-
     }, [categorySkill]);
 
     datepickerTranslate();

@@ -20,6 +20,7 @@ import SourceKnowledgePage from "../pages/dashboard/SourceKnowledge";
 import SkillPage from "../pages/dashboard/Skill";
 import CategorySkillPage from "../pages/dashboard/CategorySkill";
 import KnowledgePage from "../pages/dashboard/Knowledge";
+import CategoryKnowledgePage from "../pages/dashboard/CategoryKnowledge";
 
 const Router = createBrowserRouter([
     {
@@ -93,6 +94,10 @@ const Router = createBrowserRouter([
             {
                 path: "conhecimentos-complementares",
                 element: <KnowledgePage />,
+            },
+            {
+                path: "categorias/conhecimentos-complementares",
+                element: <CategoryKnowledgePage />,
             },
         ],
     },

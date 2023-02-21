@@ -17,11 +17,13 @@ const CreateFormKnowledge: FC = () => {
     useEffect(() => {
         setCategory([]);
         if (categoryKnowledge && categoryKnowledge.length > 0) {
-            categoryKnowledge.map((category: any) => {
+            const _categoryKnowledge = [...categoryKnowledge]
+            _categoryKnowledge.sort((a: any, b: any) => a.name > b.name ? 1 : -1)
+
+            _categoryKnowledge.map((category: any) => {
                 setCategory((prevCategory: any) => [...prevCategory, { name: category.name, value: category._id }]);
             })
         }
-
     }, [categoryKnowledge]);
 
     datepickerTranslate();

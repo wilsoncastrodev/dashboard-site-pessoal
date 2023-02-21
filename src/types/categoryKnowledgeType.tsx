@@ -5,6 +5,14 @@ export type CategoryKnowledgeResponseType = {
     updated_at: string
 };
 
+export type CategoryKnowledgeRequestType = {
+    _id?: string,
+    name: string,
+    profile: {
+        _id: string
+    }
+}
+
 export type CategoryKnowledgeStateType = {
     categoryKnowledge: CategoryKnowledgeResponseType | any,
     errors: any,

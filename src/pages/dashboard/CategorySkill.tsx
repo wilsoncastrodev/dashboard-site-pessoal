@@ -8,7 +8,7 @@ import MediaQuery from "react-responsive";
 const CategorySkillPage: FC = () => {
     return (
         <Fragment>
-            <h3>Categoria de Habilidades</h3>
+            <h3>Categorias de Habilidade</h3>
             <Row>
                 <Col md={6} lg={7} xl={8}>
                     <MediaQuery maxWidth={768}>
