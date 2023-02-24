@@ -7,7 +7,7 @@ const InterestPage: FC = () => {
     return (
         <Fragment>
             <h3>Interesses</h3>
-            <Row>
+            <Row className="mt-5">
                 <Col md={6} lg={7} xl={8}>
                     <ListInterest />
                 </Col>
