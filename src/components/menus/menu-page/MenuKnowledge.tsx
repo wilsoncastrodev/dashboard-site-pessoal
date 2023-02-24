@@ -15,7 +15,7 @@ const MenuKnowledge: FC = () => {
                                 isActive ? "menu-item active" : "menu-item"
                             }
                         >
-                            <i className="fa-solid fa-book me-2"></i>
+                            <i className="fa-solid fa-book-medical me-2"></i>
                             <span>Conhecimentos</span>
                         </NavLink>
                     </ListGroup.Item>

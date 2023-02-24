@@ -9,7 +9,7 @@ const CategoryKnowledgePage: FC = () => {
     return (
         <Fragment>
             <h3>Categorias de Conhecimentos Complementares</h3>
-            <Row>
+            <Row className="mt-5">
                 <Col md={6} lg={7} xl={8}>
                     <MediaQuery maxWidth={768}>
                         <MenuKnowledge />
