@@ -5,7 +5,9 @@ import { getAllCategorySkill } from "../../stores/features/categorySkillSlice";
 import { DataTable } from 'primereact/datatable';
 import { Column } from "primereact/column";
 import { ProgressBar } from 'primereact/progressbar';
+import { InputText } from 'primereact/inputtext';
 import { MDCSnackbar } from '@material/snackbar';
+import { FilterMatchMode } from 'primereact/api';
 import EditFormSkill from "./EditFormSkill";
 import MediaQuery from 'react-responsive'
 import { Card } from "react-bootstrap";
@@ -17,6 +19,9 @@ const ListSkill: FC = () => {
     const dispatch = useAppDispatch();
     const [expandedRows, setExpandedRows] = useState<any>(null);
     const [items, setItems] = useState<any>([]);
+    const [filters, setFilters] = useState<any>({
+        global: { value: null, matchMode: FilterMatchMode.CONTAINS },
+    });
 
     useEffect(() => {
         dispatch(getAllProfileSkill(user.profile._id));
@@ -65,13 +70,33 @@ const ListSkill: FC = () => {
         return (<ProgressBar value={data.level}></ProgressBar>);
     }
 
+    const onGlobalFilterChange = (event: any) => {
+        const value = event.target.value;
+        let _filters = { ...filters };
+
+        _filters['global'].value = value;
+
+        setFilters(_filters);
+    };
+
+    const renderHeader = () => {
+        const value = filters['global'] ? filters['global'].value : '';
+
+        return (
+            <span className="p-input-icon-left">
+                <i className="fa-solid fa-magnifying-glass"></i>
+                <InputText type="search" value={value || ''} onChange={(e) => onGlobalFilterChange(e)} placeholder="Pesquisar..." />
+            </span>
+        );
+    };
+
     return (
         <Fragment>
             {   items && items.length > 0 ?
                 <Fragment>
                     <MediaQuery minWidth={960}>
-                        <DataTable value={items} paginator rows={6} responsiveLayout="stack" className="mt-lg-5"
-                            expandedRows={expandedRows}
+                        <DataTable value={items} paginator rows={6} header={renderHeader()} filters={filters} responsiveLayout="stack"
+                            expandedRows={expandedRows} emptyMessage="Não foi encontrado nenhum resultado"
                             collapsedRowIcon={"fa-regular fa-pen-to-square"}
                             expandedRowIcon={"fa-solid fa-pen-to-square"}
                             onRowToggle={(e) => setExpandedRows(e.data)}
@@ -84,8 +109,8 @@ const ListSkill: FC = () => {
                         </DataTable>
                     </MediaQuery>
                     <MediaQuery maxWidth={960}>
-                        <DataTable value={items} paginator rows={6} responsiveLayout="stack" className="mt-lg-5"
-                            expandedRows={expandedRows}
+                        <DataTable value={items} paginator rows={6} header={renderHeader()} filters={filters} responsiveLayout="stack"
+                            expandedRows={expandedRows} emptyMessage="Não foi encontrado nenhum resultado"
                             collapsedRowIcon={"fa-regular fa-pen-to-square"}
                             expandedRowIcon={"fa-solid fa-pen-to-square"}
                             onRowToggle={(e) => setExpandedRows(e.data)}

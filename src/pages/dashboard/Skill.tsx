@@ -9,7 +9,7 @@ const SkillPage: FC = () => {
     return (
         <Fragment>
             <h3>Habilidades</h3>
-            <Row>
+            <Row className="mt-5">
                 <Col md={6} lg={7} xl={8}>
                     <MediaQuery maxWidth={768}>
                         <MenuSkill />
