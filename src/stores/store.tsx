@@ -13,7 +13,6 @@ import { useDispatch, useSelector, TypedUseSelectorHook } from "react-redux";
 const store = configureStore({
     reducer: {
         auth: authReducer,
-        education: educationReducer
         education: educationReducer,
         experience: experienceReducer,
         interest: interestReducer,

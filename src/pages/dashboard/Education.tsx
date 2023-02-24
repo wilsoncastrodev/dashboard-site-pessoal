@@ -7,7 +7,7 @@ const EducationPage: FC = () => {
     return (
         <Fragment>
             <h3>Educação</h3>
-            <Row>
+            <Row className="mt-5">
                 <Col md={6} lg={7} xl={8}>
                     <ListEducation />
                 </Col>

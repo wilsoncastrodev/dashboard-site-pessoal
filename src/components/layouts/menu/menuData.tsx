@@ -42,7 +42,7 @@ const menuData = [
         route: "habilidades",
     },
     {
-        id: "7",
+        id: "8",
         name: "Conhecimentos Complementares",
         icon: "fa-solid fa-book-medical",
         route: "conhecimentos-complementares",
