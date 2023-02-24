@@ -6,8 +6,8 @@ import { Col, Row } from "react-bootstrap";
 const SourceKnowledgePage: FC = () => {
     return (
         <Fragment>
-            <h3>Interesses</h3>
-            <Row>
+            <h3>Fontes de Conhecimento</h3>
+            <Row className="mt-5">
                 <Col md={6} lg={7} xl={8}>
                     <ListSourceKnowledge />
                 </Col>
