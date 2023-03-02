@@ -56,6 +56,7 @@ export const experienceSlice = createSlice({
     reducers: {},
     extraReducers: (builder) => {
         builder.addCase(getAllProfileExperience.pending, (state) => {
+            state.experience = null;
             state.isLoading = true;
         });
         builder.addCase(getAllProfileExperience.fulfilled, (state, action) => {

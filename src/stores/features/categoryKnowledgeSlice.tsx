@@ -56,6 +56,7 @@ export const categoryKnowledgeSlice = createSlice({
     reducers: {},
     extraReducers: (builder) => {
         builder.addCase(getAllCategoryKnowledge.pending, (state) => {
+            state.categoryKnowledge = null;
             state.isLoading = true;
         });
         builder.addCase(getAllCategoryKnowledge.fulfilled, (state, action) => {

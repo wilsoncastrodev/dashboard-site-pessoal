@@ -22,7 +22,6 @@ const ListInterest: FC = () => {
         global: { value: null, matchMode: FilterMatchMode.CONTAINS },
     });
 
-
     useEffect(() => {
         dispatch(getAllProfileInterest(user.profile._id));
     }, [dispatch, user, isLoading]);

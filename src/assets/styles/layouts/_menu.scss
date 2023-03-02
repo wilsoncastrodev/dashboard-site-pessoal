@@ -131,6 +131,33 @@
         padding: 0;
         height: 70px;
 
+        &-alt {
+            height: auto;
+            text-align: center;
+            font-family: "Poppins";
+
+            .profile-user-letter {
+                height: 128px;
+                width: 128px;
+                line-height: 128px;
+                background: $blue-100;
+                display: inline-block;
+                border-radius: 50%;
+                font-size: 62px;
+                color: $white;
+                margin: 20px 0;
+            }
+
+            .profile-user-name {
+                font-size: large;
+            }
+
+            .profile-user-profession {
+                font-size: small;
+                color: #3d575e;
+            }
+        }
+
         .list-group {
             height: 100%;
             line-height: 2.8;
@@ -168,6 +195,47 @@
                     &:hover {
                         background-color: $gray-700;
                         border-radius: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+    .card-menu {
+        height: auto;
+
+        .list-group {
+            line-height: 2.2;
+            font-size: 1rem;
+            padding: 12px;
+
+            .list-group-item {
+                flex: none;
+                width: auto;
+                border: none;
+                padding: 0;
+
+                &:first-child {
+                    border-top-right-radius: 12px;
+                    border-top-left-radius: 12px;
+                }
+
+                &:last-child {
+                    border-bottom-right-radius: 12px;
+                    border-bottom-left-radius: 12px;
+                }
+
+                .menu-item {
+                    padding: 8px 0;
+
+                    .fa-user {
+                        font-size: 1.1875rem;
+                        margin-right: 8px;
+                    }
+
+                    .fa-user-gear {
+                        font-size: 1.1875rem;
+                        margin-right: 8px;
                     }
                 }
             }

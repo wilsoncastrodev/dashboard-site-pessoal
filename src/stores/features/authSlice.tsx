@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { LoginRequestType, RegisterRequestType, AuthStateType } from "../../types/authType";
 import { axiosErrorHandler } from "../../utils/errors";
-import { getUserCurrent, setUserCurrent } from "../../utils/commons";
+import { clearUserCurrent, getUserCurrent, setUserCurrent } from "../../utils/commons";
 import { setToken, clearToken } from "../../utils/token";
 import AuthService from "../../services/authService";
 
@@ -22,6 +22,7 @@ export const register = createAsyncThunk("auth/register", async (payload: Regist
     try {
         const response = await AuthService.register(payload);
         setToken(response.data.token);
+        setUserCurrent(response.data.user);
         return response.data.user;
     } catch (err) {
         const error = axiosErrorHandler(err)
@@ -33,6 +34,7 @@ export const logout = createAsyncThunk("auth/logout", async (_, { rejectWithValu
     try {
         const response = AuthService.logout();
         clearToken();
+        clearUserCurrent();
         return response;
     } catch (err) {
         const error = axiosErrorHandler(err)

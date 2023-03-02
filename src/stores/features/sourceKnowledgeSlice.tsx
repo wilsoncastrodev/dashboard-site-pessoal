@@ -56,6 +56,7 @@ export const sourceKnowledgeSlice = createSlice({
     reducers: {},
     extraReducers: (builder) => {
         builder.addCase(getAllProfileSourceKnowledge.pending, (state) => {
+            state.sourceKnowledge = null;
             state.isLoading = true;
         });
         builder.addCase(getAllProfileSourceKnowledge.fulfilled, (state, action) => {
@@ -69,8 +70,6 @@ export const sourceKnowledgeSlice = createSlice({
             state.isLoading = true;
         });
         builder.addCase(createSourceKnowledge.fulfilled, (state, action) => {
-            console.log(action.payload);
-
             state.sourceKnowledge = action.payload;
             state.isLoading = false;
             state.errors = null;

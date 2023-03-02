@@ -11,12 +11,11 @@
         }
 
         input {
-            border-color: $blue-100;
+            border-color: #c5d6e0;
             height: 48px;
             border-radius: 0.4rem;
             font-size: 0.9rem;
             background: transparent;
-
 
             &::placeholder {
                 font-size: 0.9rem;
@@ -95,15 +94,19 @@
 
                     img {
                         border-radius: 5px;
-                        object-fit: cover;
-                        object-position: center;
                         height: 86px;
                         width: 124px;
                     }
 
                     td {
+                        color: $primary;
+
                         .p-column-title {
                             min-width: 135px;
+                        }
+
+                        .fa-trash-can {
+                            color: #e11d48;
                         }
                     }
 
@@ -214,9 +217,23 @@
 
 
         .p-highlight {
-            background: #e4f2f6 !important;
-            border-color: #e4f2f6 !important;
+            background: #ecf2f4 !important;
+            border-color: #ecf2f4 !important;
             color: $blue-100 !important;
+            min-width: 2.6rem;
+            height: 2.6rem;
+        }
+
+        .p-paginator-page {
+            min-width: 2.6rem !important;
+            height: 2.6rem !important;
+
+            &:not(.p-highlight) {
+                &:hover {
+                    min-width: 2.6rem !important;
+                    height: 2.6rem !important;
+                }
+            }
         }
 
         @include media-breakpoint-down(md) {

@@ -56,6 +56,7 @@ export const skillSlice = createSlice({
     reducers: {},
     extraReducers: (builder) => {
         builder.addCase(getAllProfileSkill.pending, (state) => {
+            state.skill = null;
             state.isLoading = true;
         });
         builder.addCase(getAllProfileSkill.fulfilled, (state, action) => {
@@ -69,8 +70,6 @@ export const skillSlice = createSlice({
             state.isLoading = true;
         });
         builder.addCase(createSkill.fulfilled, (state, action) => {
-            console.log(action.payload);
-
             state.skill = action.payload;
             state.isLoading = false;
             state.errors = null;

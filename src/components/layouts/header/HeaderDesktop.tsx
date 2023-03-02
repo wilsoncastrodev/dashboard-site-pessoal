@@ -2,7 +2,6 @@ import { FC } from "react";
 import { Col, Container, Dropdown, Row } from "react-bootstrap";
 import { useNavigate, Link } from "react-router-dom";
 import { useAppDispatch, useAppSelector, RootState } from "../../../stores/store";
-
 import { logout } from "../../../stores/features/authSlice";
 import { nameShort, firstLetterName } from "../../../utils/commons";
 

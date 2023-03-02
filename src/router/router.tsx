@@ -61,7 +61,7 @@ const Router = createBrowserRouter([
             },
             {
                 path: "",
-                element: <Navigate to="educacao" />
+                element: <Navigate to="perfil" />
             },
             {
                 path: "perfil",

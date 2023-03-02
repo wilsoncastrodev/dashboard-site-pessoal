@@ -56,6 +56,7 @@ export const interestSlice = createSlice({
     reducers: {},
     extraReducers: (builder) => {
         builder.addCase(getAllProfileInterest.pending, (state) => {
+            state.interest = null;
             state.isLoading = true;
         });
         builder.addCase(getAllProfileInterest.fulfilled, (state, action) => {

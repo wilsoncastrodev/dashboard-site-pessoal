@@ -56,6 +56,7 @@ export const educationSlice = createSlice({
     reducers: {},
     extraReducers: (builder) => {
         builder.addCase(getAllProfileEducation.pending, (state) => {
+            state.education = null;
             state.isLoading = true;
         });
         builder.addCase(getAllProfileEducation.fulfilled, (state, action) => {

@@ -56,6 +56,7 @@ export const categorySkillSlice = createSlice({
     reducers: {},
     extraReducers: (builder) => {
         builder.addCase(getAllCategorySkill.pending, (state) => {
+            state.categorySkill = null;
             state.isLoading = true;
         });
         builder.addCase(getAllCategorySkill.fulfilled, (state, action) => {

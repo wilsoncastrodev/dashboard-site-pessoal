@@ -11,7 +11,7 @@ export const DashboardLayout: FC = () => {
             <Header />
             <Menu />
             <main>
-                <Container className="mt-4">
+                <Container className="mt-4 pb-5">
                     <Outlet />
                 </Container>
             </main>
