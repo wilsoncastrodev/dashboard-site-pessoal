@@ -44,6 +44,16 @@ export const deleteSkill = createAsyncThunk("skill/deleteSkill", async (id: stri
     }
 });
 
+export const sortSkills = createAsyncThunk("skill/sortSkills", async (payload: SkillRequestType, { rejectWithValue }) => {
+    try {
+        const response = await SkillService.sortSkills(payload);
+        return response;
+    } catch (err) {
+        const error = axiosErrorHandler(err)
+        return rejectWithValue(error);
+    }
+});
+
 const initialState: SkillStateType = {
     skill: null,
     errors: null,
@@ -97,6 +107,9 @@ export const skillSlice = createSlice({
         });
         builder.addCase(deleteSkill.rejected, (state, action) => {
             state.errors = action.payload;
+        });
+        builder.addCase(sortSkills.fulfilled, (state) => {
+            state.isLoading = false;
         });
     },
 });

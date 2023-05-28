@@ -1,33 +1,68 @@
 .btn {
-  font-size: 1.07rem;
-  color: $white;
-  border-radius: 4px;
+    font-size: 1.07rem;
+    color: $white;
+    border-radius: 4px;
 
-  &.btn-primary {
-    background: $primary;
-    border: none;
-
-    &:hover {
-      background: darken($primary, 2%);
-    }
-
-    &-alt {
-        background: $blue-700;
+    &.btn-primary {
+        background: $primary;
         border: none;
-        font-family: 'Rubik';
-        border-radius: 6px;
-        padding: 12px 14px;
-        font-size: 15px;
 
         &:hover {
-          background: darken($blue-700, 2%);
+            background: darken($primary, 2%);
+        }
+
+        &-alt {
+            background: $blue-700;
+            border: none;
+            font-family: 'Rubik';
+            border-radius: 6px;
+            padding: 12px 14px;
+            font-size: 15px;
+
+            &:hover {
+                background: darken($blue-700, 2%);
+            }
         }
     }
-  }
 
-  &.btn-block {
-    padding: 11px 20px;
-  }
+    &.btn-block {
+        padding: 11px 20px;
+    }
+}
+
+.btn-switch {
+    height: 48px;
+    width: 48px;
+    text-align: center;
+    border-radius: 6px;
+    font-size: 1.125rem;
+    border: none;
+    display: inline-block;
+    line-height: 48px;
+
+    &.btn-primary {
+        background: #e7edf1;
+
+        &:hover {
+            background: darken(#e7edf1, 2%);
+        }
+    }
+
+    &.btn-light {
+        background: #e9ecee;
+
+        i {
+            color: #618394 !important;
+        }
+
+        &:hover {
+            background: darken(#e9ecee, 2%);
+
+            i {
+                color: $blue-100 !important;
+            }
+        }
+    }
 }
 
 .input-group {

@@ -1,0 +1,37 @@
+.p-dialog-mask {
+    .p-dialog-title {
+        font-family: $font-family-main;
+        font-weight: 500 !important;
+        font-size: 1.35rem !important;
+        color: $primary;
+    }
+
+    .p-dialog-content {
+        button {
+            background-color: $primary;
+            padding: 0.85rem 1.25rem;
+            font-size: 0.9rem;
+            border: none;
+
+            &:hover,
+            &.active,
+            &:focus {
+                background: darken($primary, 7%);
+            }
+        }
+    }
+
+    .p-dialog-footer {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+
+        button {
+            padding: 9px 16px;
+
+            span {
+                font-weight: 400;
+                font-size: 1rem;
+            }
+        }
+    }
+}

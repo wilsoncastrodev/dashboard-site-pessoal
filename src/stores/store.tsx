@@ -24,7 +24,9 @@ const store = configureStore({
         knowledge: knowledgeReducer,
         categoryKnowledge: categoryKnowledgeReducer
     },
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+        serializableCheck: false
+    }),
 })
 
 export type AppDispatch = typeof store.dispatch;

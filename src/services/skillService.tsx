@@ -18,11 +18,16 @@ const deleteSkill = (id: string): Promise<AxiosResponse> => {
     return api.delete(`skills/${id}`);
 }
 
+const sortSkills = (payload: SkillRequestType): Promise<AxiosResponse<SkillResponseType>> => {
+    return api.post<SkillResponseType>(`skills/sort-skills`, payload);
+}
+
 const SkillService = {
     getAllProfileSkill,
     createSkill,
     updateSkill,
-    deleteSkill
+    deleteSkill,
+    sortSkills
 };
 
 export default SkillService;
