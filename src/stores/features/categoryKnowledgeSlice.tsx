@@ -44,6 +44,16 @@ export const deleteCategoryKnowledge = createAsyncThunk("categoryKnowledge/delet
     }
 });
 
+export const sortCategoriesKnowledge = createAsyncThunk("categoryKnowledge/sortCategoriesKnowledge", async (payload: CategoryKnowledgeRequestType, { rejectWithValue }) => {
+    try {
+        const response = await CategoryKnowledgeService.sortCategoriesKnowledge(payload);
+        return response;
+    } catch (err) {
+        const error = axiosErrorHandler(err)
+        return rejectWithValue(error);
+    }
+});
+
 const initialState: CategoryKnowledgeStateType = {
     categoryKnowledge: null,
     errors: null,
@@ -97,6 +107,9 @@ export const categoryKnowledgeSlice = createSlice({
         });
         builder.addCase(deleteCategoryKnowledge.rejected, (state, action) => {
             state.errors = action.payload;
+        });
+        builder.addCase(sortCategoriesKnowledge.fulfilled, (state) => {
+            state.isLoading = false;
         });
     },
 });

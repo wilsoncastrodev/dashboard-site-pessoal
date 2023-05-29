@@ -18,11 +18,16 @@ const deleteCategoryKnowledge = (id: string): Promise<AxiosResponse> => {
     return api.delete(`category-knowledge/${id}`);
 }
 
+const sortCategoriesKnowledge = (payload: CategoryKnowledgeRequestType): Promise<AxiosResponse<CategoryKnowledgeResponseType>> => {
+    return api.post<CategoryKnowledgeResponseType>(`category-knowledge/sort-categories-knowledge`, payload);
+}
+
 const CategoryKnowledgeService = {
     getAllCategoryKnowledge,
     createCategoryKnowledge,
     updateCategoryKnowledge,
-    deleteCategoryKnowledge
+    deleteCategoryKnowledge,
+    sortCategoriesKnowledge
 };
 
 export default CategoryKnowledgeService;
