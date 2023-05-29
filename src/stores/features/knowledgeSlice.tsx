@@ -44,6 +44,16 @@ export const deleteKnowledge = createAsyncThunk("knowledge/deleteKnowledge", asy
     }
 });
 
+export const sortKnowledge = createAsyncThunk("skill/sortKnowledge", async (payload: KnowledgeRequestType, { rejectWithValue }) => {
+    try {
+        const response = await KnowledgeService.sortKnowledge(payload);
+        return response;
+    } catch (err) {
+        const error = axiosErrorHandler(err)
+        return rejectWithValue(error);
+    }
+});
+
 const initialState: KnowledgeStateType = {
     knowledge: null,
     errors: null,
@@ -97,6 +107,9 @@ export const knowledgeSlice = createSlice({
         });
         builder.addCase(deleteKnowledge.rejected, (state, action) => {
             state.errors = action.payload;
+        });
+        builder.addCase(sortKnowledge.fulfilled, (state) => {
+            state.isLoading = false;
         });
     },
 });

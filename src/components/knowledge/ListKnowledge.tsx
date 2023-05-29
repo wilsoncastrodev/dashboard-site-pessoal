@@ -10,6 +10,7 @@ import { FilterMatchMode } from 'primereact/api';
 import EditFormKnowledge from "./EditFormKnowledge";
 import MediaQuery from 'react-responsive';
 import { Card } from "react-bootstrap";
+import DialogSortKnowledge from "./DialogSortKnowledge";
 
 const ListKnowledge: FC = () => {
     const user = useAppSelector((state: RootState) => state.auth.user);
@@ -78,10 +79,19 @@ const ListKnowledge: FC = () => {
         const value = filters['global'] ? filters['global'].value : '';
 
         return (
-            <span className="p-input-icon-left">
-                <i className="fa-solid fa-magnifying-glass"></i>
-                <InputText type="search" value={value || ''} onChange={(e) => onGlobalFilterChange(e)} placeholder="Pesquisar..." />
-            </span>
+            <Fragment>
+                <div className="d-flex flex-row justify-content-between">
+                    <div>
+                        <span className="p-input-icon-left">
+                            <i className="fa-solid fa-magnifying-glass"></i>
+                            <InputText type="search" value={value || ''} onChange={(e) => onGlobalFilterChange(e)} placeholder="Pesquisar..." />
+                        </span>
+                    </div>
+                    <div>
+                        <DialogSortKnowledge knowledge={knowledge}/>
+                    </div>
+                </div>
+            </Fragment>
         );
     };
 
@@ -117,7 +127,7 @@ const ListKnowledge: FC = () => {
                     </MediaQuery>
                 </Fragment>
                  :  <Card className="mt-5">
-                        <Card.Body>Não há nenhuma Habilidade cadastrada.</Card.Body>
+                        <Card.Body>Não há nenhum Conhecimento Complementar cadastrado.</Card.Body>
                     </Card>
             }
         </Fragment>
