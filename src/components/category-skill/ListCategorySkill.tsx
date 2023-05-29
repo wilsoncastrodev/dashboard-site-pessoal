@@ -9,6 +9,7 @@ import { FilterMatchMode } from 'primereact/api';
 import EditFormCategorySkill from "./EditFormCategorySkill";
 import MediaQuery from 'react-responsive';
 import { Card } from "react-bootstrap";
+import DialogSortCategorySkill from "./DialogSortCategorySkill";
 
 const ListCategorySkill: FC = () => {
     const user = useAppSelector((state: RootState) => state.auth.user);
@@ -76,10 +77,19 @@ const ListCategorySkill: FC = () => {
         const value = filters['global'] ? filters['global'].value : '';
 
         return (
-            <span className="p-input-icon-left">
-                <i className="fa-solid fa-magnifying-glass"></i>
-                <InputText type="search" value={value || ''} onChange={(e) => onGlobalFilterChange(e)} placeholder="Pesquisar..." />
-            </span>
+            <Fragment>
+                <div className="d-flex flex-row justify-content-between">
+                    <div>
+                        <span className="p-input-icon-left">
+                            <i className="fa-solid fa-magnifying-glass"></i>
+                            <InputText type="search" value={value || ''} onChange={(e) => onGlobalFilterChange(e)} placeholder="Pesquisar..." />
+                        </span>
+                    </div>
+                    <div>
+                        <DialogSortCategorySkill categoriesSkill={categoriesSkill} />
+                    </div>
+                </div>
+            </Fragment>
         );
     };
 

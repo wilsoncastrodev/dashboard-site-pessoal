@@ -8,7 +8,7 @@ import { useAppDispatch } from "../../stores/store";
 import { sortSkills } from "../../stores/features/skillSlice";
 import { MDCSnackbar } from "@material/snackbar";
 
-const Dialogproduct = ({ skills }: any) => {
+const DialogSortSkill = ({ skills }: any) => {
     const dispatch = useAppDispatch();
     const [visible, setVisible] = useState<boolean>(false);
     const [categoriesSkill, setCategoriesSkill] = useState<any>([]);
@@ -156,4 +156,4 @@ const Dialogproduct = ({ skills }: any) => {
     );
 };
 
-export default Dialogproduct;
+export default DialogSortSkill;

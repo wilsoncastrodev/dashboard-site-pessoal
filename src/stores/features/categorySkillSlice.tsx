@@ -44,6 +44,16 @@ export const deleteCategorySkill = createAsyncThunk("categorySkill/deleteCategor
     }
 });
 
+export const sortCategoriesSkill = createAsyncThunk("categorySkill/sortCategoriesSkill", async (payload: CategorySkillRequestType, { rejectWithValue }) => {
+    try {
+        const response = await CategorySkillService.sortCategoriesSkill(payload);
+        return response;
+    } catch (err) {
+        const error = axiosErrorHandler(err)
+        return rejectWithValue(error);
+    }
+});
+
 const initialState: CategorySkillStateType = {
     categorySkill: null,
     errors: null,
@@ -97,6 +107,9 @@ export const categorySkillSlice = createSlice({
         });
         builder.addCase(deleteCategorySkill.rejected, (state, action) => {
             state.errors = action.payload;
+        });
+        builder.addCase(sortCategoriesSkill.fulfilled, (state) => {
+            state.isLoading = false;
         });
     },
 });
