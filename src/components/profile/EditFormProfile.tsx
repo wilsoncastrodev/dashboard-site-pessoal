@@ -49,6 +49,7 @@ const EditFormProfile = ({ profile }: any) => {
             initialValues={{
                 _id: profile._id,
                 name: profile.name,
+                age: profile.age,
                 profession: profile.profession,
                 aboutMe: profile.aboutMe,
                 characteristic: profile.characteristic && profile.characteristic.length > 0 ? profile.characteristic : [""],
@@ -140,6 +141,65 @@ const EditFormProfile = ({ profile }: any) => {
                                             as={Col}
                                             md="12"
                                             className="mt-2 mb-2"
+                                            controlId="age"
+                                        >
+                                            <Form.Label>Idade</Form.Label>
+                                            <Form.Control
+                                                type="number"
+                                                placeholder="32"
+                                                name="age"
+                                                value={values.age}
+                                                onChange={handleChange}
+                                                isInvalid={
+                                                    !!(
+                                                        touched.age &&
+                                                        errors.age
+                                                    )
+                                                }
+                                                isValid={
+                                                    touched.age && !errors.age
+                                                }
+                                            />
+                                            <div className="invalid">
+                                                <ErrorMessage name="age" />
+                                            </div>
+                                        </Form.Group>
+                                        <Form.Group
+                                            as={Col}
+                                            md="12"
+                                            className="mt-2 mb-2"
+                                            controlId="aboutMe"
+                                        >
+                                            <Form.Label>Sobre Mim</Form.Label>
+                                            <Form.Control
+                                                as="textarea"
+                                                rows={4}
+                                                name="aboutMe"
+                                                style={{ height: "392px" }}
+                                                value={values.aboutMe}
+                                                onChange={handleChange}
+                                                isInvalid={
+                                                    !!(
+                                                        touched.aboutMe &&
+                                                        errors.aboutMe
+                                                    )
+                                                }
+                                                isValid={
+                                                    touched.aboutMe && !errors.aboutMe
+                                                }
+                                            />
+                                            <div className="invalid">
+                                                <ErrorMessage name="aboutMe" />
+                                            </div>
+                                        </Form.Group>
+                                    </Row>
+                                </Col>
+                                <Col xl={6}>
+                                    <Row>
+                                        <Form.Group
+                                            as={Col}
+                                            md="12"
+                                            className="mt-2 mb-2"
                                             controlId="location"
                                         >
                                             <Form.Label>Localização</Form.Label>
@@ -164,38 +224,6 @@ const EditFormProfile = ({ profile }: any) => {
                                                 <ErrorMessage name="contacts[location]" />
                                             </div>
                                         </Form.Group>
-                                        <Form.Group
-                                            as={Col}
-                                            md="12"
-                                            className="mt-2 mb-2"
-                                            controlId="aboutMe"
-                                        >
-                                            <Form.Label>Sobre Mim</Form.Label>
-                                            <Form.Control
-                                                as="textarea"
-                                                rows={4}
-                                                name="aboutMe"
-                                                style={{ height: "298px" }}
-                                                value={values.aboutMe}
-                                                onChange={handleChange}
-                                                isInvalid={
-                                                    !!(
-                                                        touched.aboutMe &&
-                                                        errors.aboutMe
-                                                    )
-                                                }
-                                                isValid={
-                                                    touched.aboutMe && !errors.aboutMe
-                                                }
-                                            />
-                                            <div className="invalid">
-                                                <ErrorMessage name="aboutMe" />
-                                            </div>
-                                        </Form.Group>
-                                    </Row>
-                                </Col>
-                                <Col xl={6}>
-                                    <Row>
                                         <Form.Group
                                             as={Col}
                                             md="12"

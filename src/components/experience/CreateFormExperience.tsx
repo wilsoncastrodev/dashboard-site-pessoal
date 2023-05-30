@@ -32,6 +32,7 @@ const CreateFormExperience: FC = () => {
             initialValues={{
                 position: "",
                 company: "",
+                location: "",
                 from: "",
                 to: "",
                 current: false,
@@ -91,6 +92,34 @@ const CreateFormExperience: FC = () => {
                             />
                             <div className="invalid">
                                 <ErrorMessage name="company" />
+                            </div>
+                        </Form.Group>
+                        <Form.Group
+                            as={Col}
+                            md="12"
+                            className="mt-2 mb-2"
+                            controlId="location"
+                        >
+                        <Form.Label>Localização</Form.Label>
+                            <Form.Control
+                                type="text"
+                                placeholder="São Paulo (Zona Sul), SP"
+                                name="location"
+                                value={values.location}
+                                onChange={handleChange}
+                                isInvalid={
+                                    !!(
+                                        touched.location &&
+                                        errors.location
+                                    )
+                                }
+                                isValid={
+                                    touched.location &&
+                                    !errors.location
+                                }
+                            />
+                            <div className="invalid">
+                                <ErrorMessage name="location" />
                             </div>
                         </Form.Group>
                         <Form.Group

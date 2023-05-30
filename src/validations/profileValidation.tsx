@@ -6,6 +6,8 @@ export const profileValidation = Yup.object().shape({
         .required("O campo Nome é obrigatório"),
     profession: Yup.string()
         .required("O campo Profissão é obrigatório"),
+    age: Yup.number()
+        .required("O campo Idade é obrigatório"),
     aboutMe: Yup.string()
         .required("O campo Sobre Mim é obrigatório"),
     characteristic: Yup.array().of(Yup.string().min(1)

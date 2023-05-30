@@ -13,3 +13,6 @@ export const convertUrlToFile = async (url: string, filename: string, type: stri
     const data = await response.blob();
     return new File([data], filename!, { type: type });
 }
+
+export const capitalizeFirstLetter = (string: string) => string.charAt(0).toUpperCase() + string.slice(1);
+

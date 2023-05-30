@@ -1,0 +1,36 @@
+.cv {
+    .react-pdf {
+        &__Header {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            z-index: 10;
+
+            a {
+                .fa-solid {
+                    font-size: 1.125rem;
+                    margin-right: 6px;
+                    position: relative;
+                    top: 2px;
+                }
+            }
+        }
+
+        &__Page {
+            &__canvas {
+                box-shadow: 0 0px 10px rgb(0 0 0 / 10%), 0 1px 6px rgb(0 0 0 / 10%);
+                border: none;
+                border-radius: 12px;
+            }
+
+            .textLayer,
+            .annotationLayer {
+                display: none;
+            }
+        }
+
+        &__message {
+            display: none;
+        }
+    }
+}

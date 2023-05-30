@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useState } from "react";
+import { Fragment } from "react";
 import Card from "react-bootstrap/Card";
 import { firstLetterName } from "../../../utils/commons";
 import { ListGroup } from "react-bootstrap";
@@ -28,7 +28,8 @@ const MenuProfile = ({ profile }: any) => {
                         <ListGroup>
                             <ListGroup.Item className="mb-1">
                                 <NavLink
-                                    to=""
+                                    to="/dashboard/perfil"
+                                    end
                                     className={({ isActive }) =>
                                         isActive
                                             ? "menu-item active"
@@ -44,12 +45,25 @@ const MenuProfile = ({ profile }: any) => {
                                     to="/"
                                     className={({ isActive }) =>
                                         isActive
-                                            ? "menu-item active"
-                                            : "menu-item"
+                                            ? "menu-item active d-none"
+                                            : "menu-item d-none"
                                     }
                                 >
                                     <i className="fa-solid fa-user-gear"></i>
                                     <span>Minha Conta</span>
+                                </NavLink>
+                            </ListGroup.Item>
+                            <ListGroup.Item className="mb-1">
+                                <NavLink
+                                    to="/dashboard/perfil/gerador-curriculo"
+                                    className={({ isActive }) =>
+                                        isActive
+                                            ? "menu-item active"
+                                            : "menu-item"
+                                    }
+                                >
+                                    <i className="fa-solid fa-file-signature"></i>
+                                    <span>Gerador de Currículo</span>
                                 </NavLink>
                             </ListGroup.Item>
                         </ListGroup>

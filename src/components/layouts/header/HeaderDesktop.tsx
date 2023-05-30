@@ -40,9 +40,9 @@ const HeaderDesktop: FC = () => {
                                     </div>
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
-                                    <Dropdown.Item>
+                                    {/* <Dropdown.Item>
                                         <Link to="/">Minha Conta</Link>
-                                    </Dropdown.Item>
+                                    </Dropdown.Item> */}
                                     <Dropdown.Item onClick={handleLogout}>
                                         Sair
                                     </Dropdown.Item>

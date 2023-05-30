@@ -32,6 +32,7 @@ const EditFormExperience = (experience: any) => {
                 _id: experience.data._id,
                 position: experience.data.position,
                 company: experience.data.company,
+                location: experience.data.location,
                 from: experience.data.from,
                 to: experience.data.to,
                 current: experience.data.current,
@@ -93,6 +94,34 @@ const EditFormExperience = (experience: any) => {
                                     />
                                     <div className="invalid">
                                         <ErrorMessage name="company" />
+                                    </div>
+                                </Form.Group>
+                                <Form.Group
+                                    as={Col}
+                                    md="12"
+                                    className="mt-2 mb-2"
+                                    controlId="location"
+                                >
+                                    <Form.Label>Localização</Form.Label>
+                                    <Form.Control
+                                        type="text"
+                                        placeholder="São Paulo (Zona Sul), SP"
+                                        name="location"
+                                        value={values.location}
+                                        onChange={handleChange}
+                                        isInvalid={
+                                            !!(
+                                                touched.location &&
+                                                errors.location
+                                            )
+                                        }
+                                        isValid={
+                                            touched.location &&
+                                            !errors.location
+                                        }
+                                    />
+                                    <div className="invalid">
+                                        <ErrorMessage name="location" />
                                     </div>
                                 </Form.Group>
                                 <Form.Group

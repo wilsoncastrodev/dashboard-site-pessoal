@@ -12,7 +12,7 @@ export const educationValidation = Yup.object().shape({
         .required("O campo Data de Início é obrigatório"),
     to: Yup.string().nullable(),
     current: Yup.boolean()
-        .required("O campo é obrigatório"),
+        .required("O campo Cursando Atuamente? é obrigatório"),
     description: Yup.string()
         .required("O campo Descrição é obrigatório"),
     status: Yup.string()

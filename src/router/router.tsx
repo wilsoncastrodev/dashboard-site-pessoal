@@ -2,6 +2,7 @@ import { createBrowserRouter, Navigate } from "react-router-dom";
 
 import AuthLayout from "../layouts/AuthLayout";
 import DashboardLayout from "../layouts/DashboardLayout";
+import ProfileLayout from "../layouts/ProfileLayout";
 
 import ProtectedRoute from "../components/auth/ProtectedRoute";
 import LoginProtectedRoute from "../components/auth/LoginProtectedRoute";
@@ -12,7 +13,8 @@ import NotFoundPage from "../pages/errors/NotFound";
 import LoginPage from "../pages/auth/Login";
 import RegisterPage from "../pages/auth/Register";
 
-import ProfilePage from "../pages/dashboard/Profile";
+import ProfilePage from "../pages/dashboard/profile/Profile";
+import CVGeneratePage from "../pages/dashboard/profile/CVGenerate";
 import EducationPage from "../pages/dashboard/Education";
 import ExperiencePage from "../pages/dashboard/Experience";
 import InterestPage from "../pages/dashboard/Interest";
@@ -65,7 +67,18 @@ const Router = createBrowserRouter([
             },
             {
                 path: "perfil",
-                element: <ProfilePage />,
+                element: <ProfileLayout />,
+                errorElement: <ErrorPage />,
+                children: [
+                    {
+                        path: "",
+                        element: <ProfilePage />,
+                    },
+                    {
+                        path: "gerador-curriculo",
+                        element: <CVGeneratePage />,
+                    },
+                ]
             },
             {
                 path: "educacao",

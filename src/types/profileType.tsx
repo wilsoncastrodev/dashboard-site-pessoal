@@ -1,6 +1,7 @@
 export type ProfileResponseType = {
     user: string,
     name: string,
+    age: number,
     profession: string,
     aboutMe: string,
     characteristic: string[],
@@ -28,6 +29,7 @@ export type ProfileResponseType = {
 export type ProfileRequestType = {
     _id?: string,
     name: string,
+    age: number,
     profession: string,
     aboutMe: string,
     characteristic: string[],
